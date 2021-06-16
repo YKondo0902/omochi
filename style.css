@@ -1,0 +1,135 @@
+@charset "utf-8";
+body{
+  -webkit-appearance:none;
+  -webkit-text-size-adjust: 100%;
+  margin:0;
+  background: #000;
+}
+header{
+  background: #000;
+  display: flex;
+  width:100%;
+  position: fixed;
+  top:0px;
+  z-index: 2;
+}
+header > div{block-size: 40px;}
+.logo{
+  height:40px;
+}
+#phone_menu{
+  color:#fff;
+  font-size: 20px;
+  line-height:30px;
+  block-size: 30px;
+  padding:0 5px;
+  margin-top:3px;
+  margin-right: 10px;
+  margin-left:auto;
+  cursor: pointer;
+  border:1px solid #fff;
+  border-radius: 5px;
+}
+#phone_menu.selected{
+  color:#000;
+  background-color: #fff;
+}
+.overlay{
+  position:fixed;
+  top:40px;
+  right: 10px;
+  bottom: 10px;
+  left:10px;
+  background-color: rgba(255,255,255,0.9);
+  text-align: center;
+  padding:64px;
+  opacity:0;
+  pointer-events:none;
+}
+.overlay.show{
+  opacity:1;
+  pointer-events: auto;
+}
+.overlay ul{
+  list-style-type:none;
+  margin: 0;
+  padding:0;
+}
+.overlay li{
+  margin-top:24px;
+}
+.title{
+  color:#fff;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width:200px;
+  text-align:center;
+  position:relative;
+  top:200px;
+  margin:0 auto;
+  z-index:1;
+}
+.back_ground img{
+  display:block;
+  max-width:100%;
+  width:600px;
+  margin:0 auto;
+  position: absolute;
+  top:40px;
+  right:0;
+  left:0;
+  animation-name:bg_img;
+  animation-duration:15s;
+  animation-iteration-count: infinite;
+  opacity:0;
+}
+
+.back_ground img#bg3{
+  animation-delay: 5s;
+}
+.back_ground img#bg2{
+  animation-delay: 10s;
+}
+@keyframes bg_img {
+  0%{opacity:0;}
+  16.7%{opacity: 1;}
+  33.3%{opacity:0}
+}
+
+iframe.map{
+  position: absolute;
+  top:700px;
+  right:0;
+  left:0;
+  width:550px;
+  height:450px;
+  margin:0 auto;
+}
+
+/* ここからPC向け */
+.pc_menu{display: none;}
+@media(min-width:600px){
+  .pc_menu{
+    display: block;
+    margin-left:auto;
+    block-size: 40px;
+  }
+  .pc_menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  .pc_menu a{
+    text-decoration: none;
+    color: #fff;
+  }
+  .pc_menu a{
+    display: block;
+    width: 180px;
+    line-height: 40px;
+    text-align: center;
+  }
+  .pc_menu a:hover{background-color: gray;}
+  #phone_menu{display: none;}
+}
