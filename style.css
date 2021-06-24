@@ -1,4 +1,7 @@
 @charset "utf-8";
+html{
+  scroll-behavior: smooth;
+}
 body{
   -webkit-appearance:none;
   -webkit-text-size-adjust: 100%;
@@ -140,11 +143,8 @@ img.food{
   display:block;
   width:600px;
   max-width: 100%;
-  padding-top:40px;/*リンク先の位置の調整*/
 }
 .Foods h1{
-  padding-top: 40px;
-  margin-top: -40px;
   color:#000;
   font-family: sans-serif;
   font-size: 24px;
@@ -179,7 +179,6 @@ img.food{
 }
 
 .access{
-  padding-top: 40px;
   position: relative;
   right: 0;
   left:0;
@@ -190,8 +189,6 @@ img.food{
   background-color: #fff;
 }
 .access h1{
-  padding-top: 40px;
-  margin-top: -40px;
   color: #000;
   font-size: 24px;
   text-align: center;
