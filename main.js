@@ -28,13 +28,15 @@
     });
   });
 // トップに戻る
-  const home = document.querySelector('a[href="#TOP"]');
-home.addEventListener('click', e => {
+  const homes = document.querySelectorAll('a[href="#TOP"]');/*querySelectorは最初の要素しか取得できない */
+homes.forEach(home => {
+  home.addEventListener('click', e => {
   e.preventDefault();
   window.scrollTo({
     top: 0,
     behavior: "smooth"
   });
-});
+ });
+}); 
 
 }
