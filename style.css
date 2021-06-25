@@ -56,6 +56,9 @@ header > div{block-size: 40px;}
   margin: 0;
   padding:0;
 }
+.overlay ul li{
+  padding:8px;
+}
 .overlay ul li a{
   color:#fff;
   text-decoration: none;
