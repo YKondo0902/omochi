@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">  
-    <link rel="stylesheet" href="style.css?v=2.3">
+    <link rel="stylesheet" href="style.css?v=3.0">
     <link rel="icon" href="icon.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <title>おもちどっと</title>
   <body>
     <header>
-      <div><img src="header.png" class="logo"></div>
-      <span class="material-icons" id=phone_menu>menu</span>
+      <div><img src="header.png"></div>
+      <span class="material-icons" id=phone_menu>menu</span> <!--outlineは消す-->
       <nav class="pc_menu">
         <ul>
           <li><a href="#TOP">HOME</a></li>
@@ -31,12 +31,12 @@
     </div>
     <main>
       <div id="title">
-        たい焼きカフェ　おもちどっと
+        <img src="top.png">
       </div>
       <div class="back_ground">
-        <img src="Cafe.png" id="bg1">
-        <img src="Sample.png" id="bg2">
-        <img src="Sample2.png" id="bg3">
+        <img src="Sample.png" id="bg1">
+        <img src="Sample2.png" id="bg2">
+        <img src="Sample3.png" id="bg3">
       </div>
       <div class="container">
         <section class="welcome">
@@ -45,15 +45,15 @@
             <br><br>
             ぜひお越しください。</p>        
           </section>
-        <img src="Set.png" class="food">
-          <section class="Foods">
+        <img src="Cafe.png">
+        <section class="Foods">
             <h1 id="MENU">MENU</h1>
             <p>当店のおすすめ</p>
             <p>○○○○　￥〇〇〇</p>
             <p>○○○○　￥〇〇〇</p>
             <p>○○○○　￥〇〇〇</p>
-            
         </section>
+        <img src="Set.png">
         <section class="service">
           <h1><span class="material-icons">local_cafe</span>
             営業時間11:00～22:00</h1>
@@ -62,12 +62,12 @@
         </section>
         <section class="access">
           <h1 id="ACCESS">ACCESS</h1>
+          <p><span class="material-icons">call</span> 042-513-3236</p>
           <p>東京都福生市1015‐25ボヌール１F</p>
-          <p>TEL:042-513-3236</p>
           <iframe src="https://maps.google.co.jp/maps?output=embed&q=35.742878664893325, 139.32731817640615" class="map"></iframe>
-          <!-- qの値を住所にすると他の建物が表示される -->
+          <!-- qの値を住所にしてはいけない -->
           <footer>
-           Copyright 2021おもちどっと.All rights reserved.
+           Copyright <span>おもちどっと</span>.All rights reserved.
           </footer>
         </section>
     </div>
