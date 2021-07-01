@@ -107,45 +107,30 @@ img{  /*カフェとたい焼きセットの画像*/
   color: #000;
   border-bottom: solid 20px #000;
 }
-.welcome h1{
+ h1{
   font-size: 24px;
   padding: 20px;
+  font-family:serif;
+}
+.welcome h1{
+ font-family:sans-serif;
+}
+ p{
+  font-size: 18px;
+  padding: 10px;
 }
 .welcome p{
   text-align: left;
-  font-size: 18px;
-  padding: 10px;
 }
 .Foods .text{
   width:100%;
   background-color: #fff;
   color: #000;
 }
-.Foods h1{
-  font-family: serif;
-  font-size: 20px;
-  padding: 10px;
-}
-.Foods p{
-  font-size: 18px;
-  padding: 10px;
-}
-
 .access .text{
   width:100%;
   background-color: #fff;
   color: #000;
-}
-.access h1{
-  font-family:serif;
-  font-size: 24px;
-  text-align: center;
-  padding: 10px;
-}
-.access p{
-  font-size: 16px;
-  line-height: 24px;
-  padding: 6px;
 }
 .access > p > span{
   block-size: 24px;
@@ -210,15 +195,14 @@ footer span{
     border-left:solid 20px #000;
     border-bottom:0;
   }
-   .welcome h1{
+    h1{
     font-size: 36px;
     padding: 12px;
     }
   .welcome p{
     font-size: 24px;
     padding-top:30px;
-    text-align: left;
-    }
+   }
   .welcome img{
     width:40vw;
     height: auto;
@@ -235,10 +219,6 @@ footer span{
     border-right:solid 20px #000;
     border-left:solid 20px #000;
   }
-  .Foods h1{
-    font-size: 36px;
-    padding: 12px;
-    }
   .Foods p{
     font-size: 24px;
     padding: 12px;
@@ -257,10 +237,6 @@ footer span{
     border-right:solid 20px #000;
     border-left:solid 20px #000;
   }
-  .access h1{
-    font-size: 36px;
-    padding: 12px;
-    }
   .access p{
     font-size: 24px;
     padding: 12px;
@@ -268,6 +244,7 @@ footer span{
   iframe.map{
     width:40vw;
     height:35vw;  /*少し横長にしたい*/
+    border-right: solid 20px #000;
    }
   footer{
     font-size: 24px; 
