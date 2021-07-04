@@ -15,7 +15,7 @@ header{
   width:100%;
   position: fixed;
   top:0px;
-  z-index: 1;
+  z-index: 2;
 }
 header > a > img{
   block-size: 40px; /*GoogleFontの規定値を変更*/
@@ -131,7 +131,7 @@ img{  /*カフェとたい焼きセットの画像*/
 .Foods img{
   border-top:solid 20px #000;
 }
-.taiyaki,.drink {
+.taiyaki, .o_taiyaki, .drink {
   position: relative;
   left:0;
   right:0;
@@ -143,11 +143,11 @@ img{  /*カフェとたい焼きセットの画像*/
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
 
 }
-.drink{
+.o_taiyaki, .drink{
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.taiyaki .small_title ,.drink .small_title{
+.small_title {
   position: absolute;
   display: inline-block;
   top: -8px;
@@ -158,17 +158,17 @@ img{  /*カフェとたい焼きセットの画像*/
   font-weight: normal;
   background-color: #fff;
 }
-.taiyaki ul, .drink ul {
-  padding: 0;
-  margin:0;
+.Foods .text ul{
   list-style-type: none;
-}
-.taiyaki ul li , .drink ul li{
   padding: 0;
-  margin:0;
-  font-size: 18px;
 }
-.taiyaki p{
+
+.Foods .text ul li{
+  font-size: 18px;
+  text-align: left;
+  margin-left:30%;
+}
+.taiyaki p , .o_taiyaki p{
   font-size: 14px;
   text-align: right;
   margin:20px 0 0;
@@ -279,21 +279,21 @@ footer span{
     border-left:solid 20px #000;
     border-top:0;
   }
-  .taiyaki,.drink {
+  .taiyaki, .o_taiyaki, .drink {
     width:40vw;
   }
-  .drink{
+  .drink, .o_taiyaki{
     margin-top: 40px;
   }
-  .taiyaki .small_title ,.drink .small_title{
+  .small_title{
     font-size: 24px;
     top: -10px;
     left: 14px;
   }
-  .taiyaki ul li , .drink ul li{
+  .Foods .text ul li{
     font-size: 24px;
   }
-  .taiyaki p{
+  .taiyaki p, .o_taiyaki p{
     font-size: 18px;
   }
   .drink ul li span{
