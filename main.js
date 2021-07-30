@@ -7,8 +7,34 @@
     overlay.classList.toggle('show');
     menu.classList.toggle('selected');
   });
-  
-  /*リンク押したらスクロールさせる*/
+
+ /*インターセクション監視で画像に動きをつける*/
+ const pics = document.querySelectorAll('.pic');
+ const texts = document.querySelectorAll('.text');
+
+ function callback(entries,obs) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) {
+      return;
+    }
+    entry.target.classList.add('appear');
+    obs.unobserve(entry.target);
+  });
+ }
+ const options = {
+   threshold :0.2,
+ }
+ const observer = new IntersectionObserver(callback,options);
+
+ pics.forEach(pic => {
+   observer.observe(pic);
+ });
+ texts.forEach(text => {
+   observer.observe(text);
+ });
+ 
+
+  /*リンク押したらスクロールさせる　画面遷移はさせない*/
   const anchorLinks = document.querySelectorAll('a[href^="#"]');
   const header = document.querySelector('header');
   
@@ -27,6 +53,7 @@
       });
     });
   });
+
 // トップに戻る
   const homes = document.querySelectorAll('a[href="#TOP"]');/*querySelectorは最初の要素しか取得できない */
 homes.forEach(home => {

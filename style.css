@@ -20,6 +20,7 @@ header{
 header > a > img{
   block-size: 40px; /*GoogleFontの規定値を変更*/
   width:auto;
+  opacity: 1;
 }
 
 #phone_menu{
@@ -39,7 +40,7 @@ header > a > img{
   color:#000;
   background-color: #fff;
 }
-.overlay{
+.overlay{     /*スマホメニューの背景*/
   position:fixed;
   top:40px;
   width:100px;
@@ -75,17 +76,19 @@ header > a > img{
 }
 section.title{
   width:100%;
-  height:100vh;   /*縦100％*/
+  height:100vh;   /*画面幅いっぱい*/
 }
 .title img{
+  opacity:1;
   position: absolute;
   top:32%;
   right: 0;
   left:0;
   margin:0 auto;
-  z-index:1;
+  z-index:1;      /*ロゴのz=2より低い値*/
   width: 60%;
   height: auto;
+  user-select: none;
   animation:fade_in 5s;
 }
 @keyframes fade_in{
@@ -96,16 +99,52 @@ section.title{
     opacity: 1;
   }
 }
-img{  /*カフェとたい焼きセットの画像*/
-  display:block;
-  width: 100%;
-  height: auto;
+
+.welcome{
+  margin-bottom:20px;
 }
-.welcome .text{
+.welcome .grid1{      /*テキスト*/
   width:100%;
-  background-color: #fff;
-  color: #000;
-  border-bottom: solid 20px #000;
+  background-color:transparent;
+  color: #fff;
+  position:absolute;
+  top:100vh;
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1;
+}
+.welcome .pic{    /*画像*/
+  background-size: contain;
+  width:100vw;
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.welcome .grid2.pic{
+  background-image: url(After_Cafe2.jpg);
+  height:133.33vw;
+}
+.welcome .grid3.pic{
+  background-image: url(in_cafe.jpg);
+  height:56.27vw;
+  display: none;
+}
+
+.welcome .pic.appear{
+  opacity:1;
+  transform:translateY(0);
+}
+.welcome .text.appear{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+.buffer{      /*画像の明るさ調整*/
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
  h1{
   font-size: 24px;
@@ -115,6 +154,9 @@ img{  /*カフェとたい焼きセットの画像*/
 .welcome h1{
  font-family:sans-serif;
 }
+.welcome p{
+  font-weight: bold;
+}
  p{
   font-size: 18px;
   padding: 10px;
@@ -122,30 +164,74 @@ img{  /*カフェとたい焼きセットの画像*/
 .welcome p{
   text-align: left;
 }
+.welcome .grid3{
+  display: none;
+}
 .Foods .text{
   width:100%;
-  background-color:#fff;
-  color: #000;
-  border-bottom: solid 10px #fff;
+  background-color:transparent;
+  color: #fff;
+  position: absolute;
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 1;
 }
-.Foods img{
-  border-top:solid 20px #000;
+.Foods .text.appear{
+  opacity:1;
+  transform:translateY(0);
+}
+.Foods .grid4{
+  margin-bottom: 20px;
+}
+.Foods .pic{
+  background-size: contain;
+  width:100vw;
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.Foods .pic.grid4{
+  background-image: url(Taiyaki.jpg);
+  height:87.85vw; /*高さの指定はマスト*/
+}
+.Foods .pic.grid5{
+  background-image: url(O_taiyaki.jpg);
+  height:80vw;
+}
+.Foods .pic.appear{
+  opacity:1;
+  transform:translateY(0);
+}
+.Foods .text h1{
+  font-weight: bold;
 }
 .taiyaki, .o_taiyaki, .drink {
   position: relative;
   left:0;
   right:0;
   margin:0 auto;
-  border: solid 2px #000;
-  border-radius: 8px;
   width:90vw;
   padding:20px 0;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
-
+  font-weight: bold;
 }
-.o_taiyaki, .drink{
+.Foods .text.taiyaki{
+  top:calc(100vh + 133vw);
+}
+.Foods .text.o_taiyaki{
+  position: absolute;
+  top:calc(100vh + 133vw + 112vw);
+}
+.o_taiyaki{
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.Foods .text.drink{
+  position:static;
+  background-color: #fff;
+  color: #000;
+  margin-top:20px;
+  font-weight: normal;
 }
 .small_title {
   position: absolute;
@@ -155,8 +241,12 @@ img{  /*カフェとたい焼きセットの画像*/
   padding: 0 9px;
   line-height: 1;
   font-size: 18px;
+  font-weight: bold;
+  background-color: transparent;
+}
+.drink .small_title{
+  top:20px;
   font-weight: normal;
-  background-color: #fff;
 }
 .Foods .text ul{
   list-style-type: none;
@@ -171,11 +261,11 @@ img{  /*カフェとたい焼きセットの画像*/
 .taiyaki p , .o_taiyaki p{
   font-size: 14px;
   text-align: right;
-  margin:20px 0 0;
+  margin:2vw 3vw;
   padding: 0;
 }
 .drink ul li span{
-  font-size:14px
+  font-size:14px;
 }
 .access .text{
   width:100%;
@@ -187,9 +277,9 @@ img{  /*カフェとたい焼きセットの画像*/
   line-height: 24px;
   vertical-align: bottom;
 }
-iframe.map{
+.access .map iframe{
   width:100%;
-  height:90vw;   /*正方形にする*/
+  height:90vw;   /*縦はVWで指定する*/
   vertical-align: bottom; /*iframeはインライン要素なので下に空白ができる*/
   border:0;
 }
@@ -207,9 +297,12 @@ footer span{
   color:orange;
 }
 
+
+
+
 /* ここからPC向け */
 .pc_menu{display: none;}
-@media(min-width:600px){
+@media(min-width:900px){
   .pc_menu{
     display: block;
     margin-left:auto;
@@ -234,85 +327,178 @@ footer span{
   .title img{
     top:30%;
     width:30%;
+    opacity:1;
+  }
+  .buffer{
+    background-color: rgba(0, 0, 0, 0);
   }
   .welcome{
-    display: flex;
-    border-bottom: solid 20px #000;
+    display: grid;
+    grid-template-columns: 58vw 38vw;
+    grid-template-rows:1fr 32.64vw;     /*画像比率0.5627x60vw=32.64vw→in_cafeの縦*/
+    gap:1.33vw;       /* 96vwの残り4vw / 3 */
+    width:97.33vw;    /* 96vw + 1.33vw */
+    margin:0 auto 1.33vw; 
   }
-  .welcome .text{
-    width:60%;
-    border-right:solid 20px #000;
-    border-left:solid 20px #000;
-    border-bottom:0;
+  .welcome .grid1{      /*テキスト*/  
+    background-color:#fff;
+    color:#000;
+    position:static;
+    border:0;
   }
-    h1{
+  .welcome p{
+    font-weight: normal;
+  }
+  .welcome .grid3.pic{
+    display: block;
+    width:58vw;
+    height:32.64vw;
+  }
+  
+  .welcome .grid2.pic{    /*外観の画像*/
+    grid-row:1 / 3;
+    grid-column: 2;
+    width:38vw;
+    height:50.665vw;
+  }
+ 
+  h1{
     font-size: 36px;
     padding: 12px;
-    }
-    p{
-      font-size: 24px;
-      padding: 12px;
-    }
-  .welcome p{
+  }
+  p{
     font-size: 24px;
-    padding-top:30px;
-   }
-  .welcome img{
-    width:40vw;
-    height: auto;
-    border-right:solid 20px #000;
+    padding: 12px;
+  }
+  .welcome h1{
+    font-size:30px;
+    padding: 0;
+  }
+  .welcome p{
+    font-size: 20px;
+    padding:0 0 0 10px;
   }
   .Foods{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    border-bottom: solid 20px #000;
+    display: grid;
+    grid-template-columns: 48vw 48vw;
+    /* grid-template-rows:42.17vw 38.4vw;     画像比率 0.879 x 48vw, 0.8 x 48vw */
+    /* grid-template-rows: 21.085vw 21.085vw 19.2vw 19.2vw; グリッドを細かくする */
+    grid-template-rows: 10.5425vw 10.5425vw 10.5425vw 10.5425vw 9.96vw 9.96vw 9.96vw 9.96vw;
+    column-gap:1.33vw;       /* 96vwの残り4vw / 3 */
+    width:97.33vw;    /* 96vw + 1.33vw */
+    margin:0 auto 1.33vw;  
+    position: relative;
   }
-  .Foods .text{
-    width:60%;
-    border-right:solid 20px #000;
-    border-left:solid 20px #000;
+  .Foods .text.grid1{    
+    background-color: #fff;
+    color: #000;
+    grid-row:1 / 4;
+    grid-column: 2;
+    border: 0;
+    position: static;
+    top:0;
+    width:48vw;
+    /* height:30vw; */
+    margin-bottom:1.3vw;
   }
-  .Foods img{
-    width: 40vw;
-    height: auto;
-    border-left:solid 20px #000;
-    border-top:0;
+  .Foods .text.grid2{  
+    background-color: #fff;
+    color: #000;   
+    grid-row:4 / 6;
+    grid-column: 2;
+    border: 0;
+    position: static;
+    width:48vw;
+    margin:0 0 1.3vw;
+  }
+  .Foods .text.grid3{    
+    background-color: #fff;
+    color: #000;  
+    grid-row:6 / 9;
+    grid-column: 2;
+    border: 0;
+    margin:0;
+    position:static;
+    width:48vw;
+  }
+  .Foods .grid4.pic{
+    width:48vw;
+    height:42.17vw;
+    grid-row:1 / 5;
+    grid-column: 1;
+    margin-bottom: 20px;
+  }
+  .Foods .grid5.pic{
+    width:48vw;
+    height:38.4vw;
+    grid-row: 5 / 9;
+    grid-column: 1;
+    margin-top: 20px;     /*pic4 pic5両方にmargin必要*/
+  }
+  .drink{
+    display: block;
   }
   .taiyaki, .o_taiyaki, .drink {
-    width:40vw;
+    width:38vw;
   }
-  .drink, .o_taiyaki{
-    margin-top: 40px;
+  .o_taiyaki span{   
+    margin:4vw 2vw;
+  }
+  .o_taiyaki ul{
+    margin:7vw 2vw 2vw;
+  }
+  
+  .o_taiyaki{
+    margin:20px auto 20px;
   }
   .small_title{
+    position: absolute;
     font-size: 24px;
-    top: -10px;
     left: 14px;
+    display: inline-block;
+    top: 8px;
+    left: 10px;
+    padding: 0 9px;
+    line-height: 1;
+    border-radius: 5px;
+    font-weight: normal;
+    background-color: #fff;
+    color:#000;
   }
   .Foods .text ul li{
     font-size: 24px;
+    font-weight: normal;
   }
   .taiyaki p, .o_taiyaki p{
     font-size: 18px;
+    font-weight: normal;
   }
-  .drink ul li span{
-    font-size:18px
+  .drink span{
+    margin:5vw;
+  }
+  .drink ul{
+    margin:8vw 0 5vw 5vw;
+  }
+  .drink ul li span{     /*値段*/
+    font-size:18px;
+    font-weight: normal;
   }
   .access{
     display: flex;
-    justify-content: flex-end;
+    margin:0 auto;
+    width:97vw;
   }
   .access .text{
-    width:60%;
-    border-right:solid 20px #000;
-    border-left:solid 20px #000;
+    width:58vw;
+    height: 34vw;
+    margin-right: 1.33vw;
   }
-  iframe.map{
-    width:40vw;
-    height:35vw;  /*少し横長にしたい*/
-    border-right: solid 20px #000;
-   }
+  .access .map iframe{
+    width:38vw;
+    height:34vw; 
+    padding: 0;
+    border:0;
+  }
   footer{
     font-size: 24px; 
   }

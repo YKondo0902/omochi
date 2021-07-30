@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">  
-    <link rel="stylesheet" href="style.css?v=3.4">  <!--バージョンをアップすること-->
+    <link rel="stylesheet" href="style.css?v=4.0">  <!--バージョンをアップすること-->
     <link rel="icon" href="icon.jpg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  <!--GoogleFontマテリアルアイコン-->
     <meta name="google-site-verification" content="gPLXaqvLXsyzF-yuZsjjI8-sMlqY6Y07RI8vkRmS18w" />  <!--Google Serch Console-->
-    <meta name="description" content="青梅線福生駅西口降りて徒歩１分。たい焼きカフェ「おもちどっと」が７月上旬にOPENします。">
+    <meta name="description" content="青梅線福生駅西口降りて徒歩１分。たい焼きカフェ「おもちどっと」が７月９日にOPENしました。">
   </head>
   <title>JR青梅線福生駅たい焼きカフェ</title>
   <body>
@@ -36,66 +36,75 @@
           <img src="top.png" alt="たい焼きカフェおもちどっと">
       </section>
         <section class="welcome">
-          <div class="text">
-            <h1>おもちどっとへようこそ</h1>
-            <p>福生駅から徒歩１分のロケーションに、たい焼きカフェ「おもちどっと」が７月９日にOPENします。</p>
-            <p>ぜひお越しください。</p>
-          </div>
-          <div class="img">
-            <img src="Cafe.png" alt="This is Cafe img">
-          </div>
+            <div class="grid1 text">     <!--grid1はテキスト-->
+                <h1>おもちどっとへようこそ</h1>
+                <p>福生駅から徒歩１分のロケーションに、たい焼きカフェ「おもちどっと」が７月９日にOPENしました。</p>
+                <p>ぜひお越しください。</p>
+            </div>
+            <div class="grid2 pic">   <!--背景画像で設定する-->
+              <div class="buffer">
+              </div>     
+            </div>
+            <div class="grid3 pic">   <!--スマホでは表示しない-->
+              <div class="buffer">
+              </div>
+            </div>
         </section>
         <section class="Foods">
-          <div class="text">
-            <h1 id="MENU">MENU</h1>
-            <div class="taiyaki">
-              <span class="small_title">たい焼き</span>
-              <ul>
-                <li> あん</li>
-                <li> クリーム</li>
-                <li> チーズ</li>
-              </ul>
-              <p>各１５０円（税込）</p>         
-          </div>
-            <div class="o_taiyaki">
-              <span class="small_title">おもちたい焼き</span>
-              <ul>
-                <li> クリーム</li>
-                <li> クリームチーズ</li>
-              </ul>
-              <p>各１５０円（税込）</p>         
-          </div>
-            <div class="drink">
-              <span class="small_title">ドリンク</span>
-              <ul>
-                <li> おもちブレンド <span>・３００円</span></li>
-                <li> カフェラテ <span>・・・４００円</span></li>
-              </ul>
-          </div>
-            
-          </div>
-          <div class="img">
-            <img src="Set.png" alt="This is Taiyaki Set">
-          </div>
+             <div class="grid1 text">
+                  <h1 id="MENU">MENU</h1>
+                  <div class="taiyaki">
+                      <span class="small_title">たい焼き</span>
+                      <ul>
+                        <li> あん</li>
+                        <li> クリーム</li>
+                        <li> チーズ</li>
+                      </ul>
+                      <p>各１５０円（税込）</p>         
+                  </div>
+            </div>
+            <div class="grid2 o_taiyaki text">
+                  <span class="small_title">おもちたい焼き</span>
+                  <ul>
+                    <li> クリーム</li>
+                    <li> クリームチーズ</li>
+                  </ul>
+                  <p>各１５０円（税込）</p>         
+            </div>
+            <div class="grid4 pic"> <!--たい焼き画像-->
+              <div class="buffer">
+              </div>
+            </div>
+            <div class="grid5 pic"> <!--白いたい焼き-->
+              <div class="buffer">
+              </div>
+            </div>
+            <div class="grid3 drink text">  
+                <span class="small_title">ドリンク</span>
+                <ul>
+                  <li> おもちブレンド <span>・３００円</span></li>
+                  <li> カフェラテ <span>・・・４００円</span></li>
+                </ul>
+            </div>
         </section>
         <section class="access">
-          <div class="text">
-            <h1 id="ACCESS">ACCESS</h1>
-            <p>東京都福生市1015‐25ボヌール１F</p>
-            <p><span class="material-icons">call</span> 042-513-3236</p>
-            <p><span class="material-icons">local_cafe</span>
-              営業時間11:00～22:00</p>
-            <p>平日・祝日問わず夜遅くまでご利用頂けます。</p>
-          </div>
-          <iframe src="https://maps.google.co.jp/maps?output=embed&q=35.742878664893325, 139.32731817640615" class="map"></iframe>
-          <!-- qの値を住所にしてはいけない -->
+            <div class="text">
+              <h1 id="ACCESS">ACCESS</h1>
+              <p>東京都福生市1015‐25ボヌール１F</p>
+              <p><span class="material-icons">call</span> 042-513-3236</p>
+              <p><span class="material-icons">local_cafe</span>
+                営業時間11:00～22:00</p>
+              <p>平日・祝日問わず夜遅くまでご利用頂けます。</p>
+            </div>
+            <div class="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.3326449404644!2d139.3272953!3d35.742627899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601921dae0774939%3A0x7c1c1fe1fed0cb10!2z44Gf44GE54S844GNQ2FmZSBPbW9jaGku!5e0!3m2!1sja!2sjp!4v1626915231322!5m2!1sja!2sjp" loading="lazy"></iframe>
+            </div>
         </section>
           <footer>
            Copyright <span>おもちどっと</span>.All rights reserved.
           </footer>
     </main>
     <script src="smoothscroll.js"></script> <!--Safariでスクロールさせる-->
-    <script src = main.js></script>
-  </body>
-  
+    <script src = main.js></script>   <!--main.jsは最後に読み込む-->
+  </body>  
 </html>
